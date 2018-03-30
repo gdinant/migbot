@@ -1,0 +1,31 @@
+{
+  "name": "miggybot",
+  "version": "1.0.0",
+  "description": "Migration script name bot generator.",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdinant/migbot.git"
+  },
+  "author": "gdinant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gdinant/migbot/issues"
+  },
+  "homepage": "https://github.com/gdinant/migbot",
+  "dependencies": {
+    "botbuilder": "^3.11.0",
+    "botbuilder-teams": "^0.1.6",
+    "config": "^1.28.1",
+    "express": "^4.16.2",
+    "sugar": "^2.0.4"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.0.0"
+  }
+}

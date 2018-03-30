@@ -1,0 +1,49 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.0",
+    "version": "1.0.0",
+    "id": "86c1a85b-fd05-4510-bd4f-a025a7d0a5c1",
+    "packageName": "com.gdinant.miggybot",
+    "developer": {
+        "name": "G. Dinant",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://www.microsoft.com/privacy",
+        "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+    },
+    "name": {
+        "short": "MiggyBot",
+        "full": "MiggyBot"
+    },
+    "description": {
+        "short": "Migration script name generator",
+        "full": "MiggyBot tells you what will be your next migration script file name"
+    },
+    "icons": {
+        "outline": "dv20x20.png",
+        "color": "dv96x96.png"
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [{
+        "botId": "86c1a85b-fd05-4510-bd4f-a025a7d0a5c1",
+        "needsChannelSelector": false,
+        "isNotificationOnly": false,
+        "scopes": [
+            "personal"
+        ],
+        "commandLists": [
+            {
+                "scopes": [
+                        "personal"
+                ],
+                "command": [
+                    {
+                        "title": "Generate",
+                        "description": "Generate a migration script file name"
+                    }
+                ]
+            }
+        ]
+    }],
+    "permissions": [],
+    "validDomains": []
+}
