@@ -1,5 +1,10 @@
 'use strict';
 
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
 module.exports.setup = function(app) {
     var builder = require('botbuilder');
     var teams = require('botbuilder-teams');
@@ -12,12 +17,13 @@ module.exports.setup = function(app) {
         appPassword: process.env.MICROSOFT_APP_PASSWORD || botConfig.microsoftAppPassword
     });
     
+    var inMemoryStorage = new builder.MemoryBotStorage();
     var bot = new builder.UniversalBot(connector, function(session) {
-        var params = teams.TeamsMessage.getTextWithoutMentions(session.message).replace(" ", "_");
+        var params = teams.TeamsMessage.getTextWithoutMentions(session.message).replaceAll("[^a-zA-Z]", "_");
         var now = Sugar.Date.format(new Date(), '{yyyy}{MM}{dd}{hh}{mm}{ss}');
         var scriptName = now + "__" + params + ".sql";
         session.send(scriptName);
-    });
+    }).set('storage', inMemoryStorage);
 
     app.post('/api/messages', connector.listen());
     module.exports.connector = connector;
